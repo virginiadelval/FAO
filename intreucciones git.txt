@@ -1,4 +1,4 @@
-Intrucciones GIT
+Intrucciones GITgigit 
 echo "# FAO" >> README.md
 git init
 git add README.md
