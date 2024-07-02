@@ -115,18 +115,18 @@ var panelPob = [
 // panel Acceso al Agua
 var panelAgua = [
 	{
-		group: "Acceso al Agua",
+		group: "Proyectos de Agua",
 		collapsed: true,
 		layers: [
 			{
 				active: false,
-				name: "Proyectos de Agua",
+				name: "Proyectos Estandarizados <br> y No Estandarizados",
 				layer: ProyecAgua,
 				transparent: true,
 				opacity: 0.5,
 			},
-			
-			
+
+
 		]
 	}];
 
@@ -157,61 +157,121 @@ var panelTransparecia = [{
 // panel de CC
 var panelCC = [
 	{
-		title: "Escenarios de Precipitación",
-		group: "PPM 4.5",
+		title: "Escenarios de CC",
+		group: "Precipitación",
 		collapsed: true,
 		layers: [
 			{
 				active: false,
-				name: "Actual",
+				name: " PPM 4.5 Actual",
 				layer: Ppm45Actual,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Futuro Cercano (2050)",
+				name: "PPM 4.5 Futuro Cercano (2050)",
 				layer: Ppm45FC,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Futuro Lejano (2100)",
+				name: "PPM 4.5 Futuro Lejano (2100)",
 				layer: Ppm45FL,
 				transparent: true,
 				opacity: 0.5,
 			},
-		]
-	},
-	{
-		group: "PPM 8.5",
-		collapsed: true,
-		layers: [
 			{
 				active: false,
-				name: "Actual",
+				name: "PPM 8.5 Actual",
 				layer: Ppm85Actual,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Futuro Cercano (2050)",
+				name: "PPM 8.5 Futuro Cercano (2050)",
 				layer: Ppm85FC,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Futuro Lejano (2100)",
+				name: "PPM 8.5 Futuro Lejano (2100)",
 				layer: Ppm85FL,
+				transparent: true,
+				opacity: 0.5,
+			},
+		]
+	},
+	{
+		group: "Temperatura Media",
+		collapsed: true,
+		layers: [
+			{
+				active: false,
+				name: " Temp Media 4.5 Actual",
+				layer: temMedia45Actual,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Temp Media 4.5 Futuro Cercano (2050)",
+				layer: temMedia45FC,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Temp Media 4.5 Futuro Lejano (2100)",
+				layer: temMedia45FL,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Temp Media 8.5 Actual",
+				layer: temMedia85Actual,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Temp Media 8.5 Futuro Cercano (2050)",
+				layer: temMedia85FC,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Temp Media 8.5 Futuro Lejano (2100)",
+				layer: temMedia85FL,
 				transparent: true,
 				opacity: 0.5,
 			},
 		]
 	}
 ];
+
+// panel Acceso al Agua
+var panelArsenico = [
+	{
+		group: "Arsénico",
+		collapsed: true,
+		layers: [
+			{
+				active: false,
+				name: "Dptos con Niveles de Arsenico",
+				layer: DeptoArsenico,
+				transparent: true,
+				opacity: 0.5,
+			},
+
+
+		]
+	}];
 
 //panel de control agregado//
 var panelLayers = new L.Control.PanelLayers(baseLayers, null,
@@ -249,6 +309,13 @@ var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
+	var panelLayers7 = new L.Control.PanelLayers(null, panelArsenico,
+		{
+			compact: true,
+			//collapsed: true,
+			collapsibleGroups: true,
+			position: 'topleft',
+		});
 var panelLayers5 = new L.Control.PanelLayers(null, panelTransparecia,
 	{
 		compact: true,
@@ -262,6 +329,6 @@ var panelLayers6 = new L.Control.PanelLayers(null, panelCC,
 		compact: true,
 		collapsed: false,
 		collapsibleGroups: true,
-		position: 'topleft',
+		position: 'topright',
 
 	});

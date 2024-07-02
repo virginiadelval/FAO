@@ -30,10 +30,6 @@ var Prov = L.geoJSON(provincia, {
 	}
 });
 
-var Rutas = L.geoJSON(rutas, {
-	style: styleRuta
-
-});
 var Localidad = L.geoJSON(locCabecera, {
 	pointToLayer: function (feature, latlng) {
 		return L.circleMarker(latlng, IconLocCab);
@@ -50,84 +46,6 @@ var Parajes = L.geoJSON(locSec, {
 	onEachFeature: function (feature, layer) {
 		var content = popupContentLocSec(feature);
 		layer.bindPopup(content);
-	}
-});
-
-var catastrosL = L.geoJSON(catastros, {
-	style: styleCatastro,
-	onEachFeature: function (feature, layer) {
-		var content = popupContent(feature);
-		layer.bindPopup(content);
-	}
-});
-
-var RBN = L.geoJSON(rbn, {
-	style: styleDpto,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentData(feature);
-		layer.bindPopup(content);
-	},
-
-});
-var RBS = L.geoJSON(rbs, {
-	style: styleDpto,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentData(feature);
-		layer.bindPopup(content);
-	}
-});
-var StaVictoria = L.geoJSON(svo, {
-	style: styleDpto,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentData(feature);
-		layer.bindPopup(content);
-	}
-});
-var DEPTO = L.geoJSON(depto, {
-	style: styleDpto,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentData(feature);
-		layer.bindPopup(content);
-	}
-});
-
-var MESAS = L.geoJSON(mesa, {
-
-	onEachFeature: function (feature, layer) {
-		var content = popupContentMesa(feature);
-		layer.bindPopup(content);
-	}
-});
-
-var ESC = L.geoJSON(escuelas, {
-	pointToLayer: function (feature, latlng) {
-		return L.marker(latlng, { icon: escIcon });
-	},
-	onEachFeature: function (feature, layer) {
-		var content = popupContentEsc(feature);
-		layer.bindPopup(content);
-	}
-});
-
-var PUESTOS = L.geoJSON(puestos, {
-	pointToLayer: function (feature, latlng) {
-		return L.circleMarker(latlng, MarkerOptions);
-
-	},
-	style: stylePuestos,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentPuestos(feature);
-		layer.bindPopup(content);
-	}
-});
-
-var RELVSOLIDARIDAD = L.geoJSON(InfoSolidaridad, {
-	pointToLayer: function (feature, latlng) {
-		return L.marker(latlng, { icon: redIcon })
-	},
-	onEachFeature: function (feature, layer) {
-		var content = popupContentInfoSolidaridad(feature);
-		layer.bindPopup(content)
 	}
 });
 
@@ -258,6 +176,78 @@ var Ppm85FL = L.geoJSON(resultadoPpm85FL, {
 	}
 
 });
+
+///temperatura media
+
+var temMedia45Actual = L.geoJSON(resultadotemMedia45Actual, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+
+var temMedia45FC = L.geoJSON(resultadotemMedia45FC, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+var temMedia45FL = L.geoJSON(resultadotemMedia45FL, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+var temMedia85Actual = L.geoJSON(resultadotemMedia85Actual, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+var temMedia85FC = L.geoJSON(resultadotemMedia85FC, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+var temMedia85FL = L.geoJSON(resultadotemMedia85FL, {
+	style: function (feature) {
+		return {
+			fillColor: feature.properties.color,
+			color: "#000", // Borde negro
+			weight: 0,
+			fillOpacity: 0.9
+		};
+	}
+
+});
+
+
 //data de Nueclos de Agricultura faminial (extraido del Atlas de AF  - Horacio)
 var NucleosAF = L.geoJSON(naf, {
 	style: styleNAG,
@@ -287,6 +277,16 @@ var DataCenso = L.geoJSON(censo,
 		style: styleCenso,
 		onEachFeature: function (feature, layer) {
 			var content = popupContentCenso(feature);
+			layer.bindPopup(content);
+		}
+	});
+
+///Dapto con Arsenicos segun el Ministerio de Salud en 2006 https://www.argentina.gob.ar/sites/default/files/2006_epidemiologia_del_hacre_en_argentina.pdf
+var DeptoArsenico = L.geoJSON(dptoArsenico,
+	{
+		style: styleDptoArsenico,
+		onEachFeature: function (feature, layer) {
+			var content = popupContentDptoArsenico(feature);
 			layer.bindPopup(content);
 		}
 	});

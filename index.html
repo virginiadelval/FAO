@@ -70,13 +70,9 @@
 	<!-- en la Carpeta DATA estan los js como capas-->
 
 	<script type="text/javascript" src="data/provincia.js"></script>
-	<script type="text/javascript" src="data/rutas.js"></script>
-	<script type="text/javascript" src="data/catastros.js"></script>
-	<script type="text/javascript" src="data/dpto.js"></script>
-	<script type="text/javascript" src="data/mesasdelagua.js"></script>
-	<script type="text/javascript" src="data/escuelas.js"></script>
-	<script type="text/javascript" src="data/puestosdata.js"></script>
-	<script type="text/javascript" src="data/info_RelevSolidaridad.js"></script>
+
+
+
 	<script type="text/javascript" src="data/geologico.js"></script>
 	<script type="text/javascript" src="data/subcuencas.js"></script>
 
@@ -85,11 +81,13 @@
 	<script type="text/javascript" src="data/fao/proviciasFAO.js"></script>
 	<script type="text/javascript" src="data/fao/regiones.js"></script>
 	<script type="text/javascript" src="data/fao/ppm.js"></script>
+	<script type="text/javascript" src="data/fao/temMedia.js"></script>
 	<script type="text/javascript" src="data/fao/naf.js"></script>
 	<script type="text/javascript" src="data/fao/proyectos.js"></script>
 	<script type="text/javascript" src="data/fao/poblacion22.js"></script>
 	<script type="text/javascript" src="data/fao/loccensal22.js"></script>
 	<script type="text/javascript" src="data/fao/parajesign.js"></script>
+	<script type="text/javascript" src="data/fao/dptoArsenico2006.js"></script>
 
 	<script type="text/javascript" src="js/wmsconae.js"></script>
 
@@ -187,11 +185,11 @@
 		map.addControl(panelLayers2);
 		map.addControl(panelLayers3);
 		map.addControl(panelLayers4);
-		
-		map.addControl(panelLayers6);
+
+		map.addControl(panelLayers7);
 		map.addControl(panelLayers5);
 		// Llamada a la función para crear la leyenda
-		createLegend();
+
 		createLegendGeologia();
 		createLegendCuenca();
 		createLegendRio();
@@ -202,9 +200,13 @@
 		createLegendProyectos();
 		createLegendCenso();
 		createLegendPPM();
+		createLegendTEM();
+		createLegendDptoArsenico();
 
 		//se le agregan los controles//
 		L.control.zoom({ position: 'topright' }).addTo(map);
+
+		map.addControl(panelLayers6);
 		L.control.scale({ position: 'bottomleft', imperial: false }).addTo(map);
 	</script>
 </body>
