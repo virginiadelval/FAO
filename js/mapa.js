@@ -185,12 +185,11 @@ var temMedia45Actual = L.geoJSON(resultadotemMedia45Actual, {
 			fillColor: feature.properties.color,
 			color: "#000", // Borde negro
 			weight: 0,
-			fillOpacity: 0.9
+			fillOpacity: 1
 		};
 	}
 
 });
-
 var temMedia45FC = L.geoJSON(resultadotemMedia45FC, {
 	style: function (feature) {
 		return {
