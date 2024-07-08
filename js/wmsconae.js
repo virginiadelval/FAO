@@ -1,5 +1,5 @@
 //options recomendada para disminuir el codido//
-$(document).ready(function (){
+
     var options = {format: 'image/png',
         uppercase: true,
         transparent: true,
@@ -76,7 +76,7 @@ buildItem: function(item) {
 });
 map.addControl(panelLayers5);
 
-});
+
 
 
 

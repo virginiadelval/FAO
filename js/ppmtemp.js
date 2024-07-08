@@ -205,7 +205,7 @@
     });
 
 
-    map.addControl(htmlLegend1and6);
+  
 
     // //leyenda estatica position//
     // var legend = L.control({
