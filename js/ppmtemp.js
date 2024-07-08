@@ -11,20 +11,20 @@
         opacity: 0.7,
         attribution: '<a href="http://geoportal.idesa.gob.ar">IDESA</a>'
     };
-    var source2 = L.WMS.source("http://geoportal.idesa.gob.ar/geoserver/wms", options2);
+    var source2 = L.WMS.source("https://geo-backend.inta.gob.ar/geoserver/wms", options2);
     var layer1 = source2.getLayer('geonode:precipitacion_anual');
-    var layer2 = source2.getLayer('geonode:_01_pp');
-    var layer3 = source2.getLayer('geonode:_02_pp');
-    var layer4 = source2.getLayer('geonode:_03_pp');
-    var layer5 = source2.getLayer('geonode:_04pp');
-    var layer6 = source2.getLayer('geonode:_05_pp_clip');
-    var layer7 = source2.getLayer('geonode:_06_pp');
-    var layer8 = source2.getLayer('geonode:_07_pp');
-    var layer9 = source2.getLayer('geonode:_08_pp');
-    var layer10 = source2.getLayer('geonode:_09_pp');
-    var layer11 = source2.getLayer('geonode:_10_pp');
-    var layer12 = source2.getLayer('geonode:_11_pp');
-    var layer13 = source2.getLayer('geonode:_12_pp');
+    var layer2 = source2.getLayer('geonode:a__01_pp');
+    var layer3 = source2.getLayer('geonode:a__02_pp');
+    var layer4 = source2.getLayer('geonode:a__03_pp');
+    var layer5 = source2.getLayer('geonode:geonode__04pp');
+    var layer6 = source2.getLayer('geonode:geonode__05_pp_clip');
+    var layer7 = source2.getLayer('geonode:geonode__06_pp');
+    var layer8 = source2.getLayer('geonode:geonode__07_pp');
+    var layer9 = source2.getLayer('geonode:geonode__08_pp');
+    var layer10 = source2.getLayer('geonode:geonode__09_pp');
+    var layer11 = source2.getLayer('geonode:geonode__10_pp');
+    var layer12 = source2.getLayer('geonode:geonode__11_pp');
+    var layer13 = source2.getLayer('geonode:geonode__12_pp');
 
 
     var panelClima = [
@@ -193,7 +193,7 @@
             
             elements: [{
             label: ' ',
-                html: '<img src= http://geoportal.idesa.gob.ar/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&width=20&height=20&layer=geonode:precipitacion_anual&alt="legend" width="100" height="90%">'
+                html: '<img src= https://geo-backend.inta.gob.ar/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&width=20&height=20&layer=geonode:precipitacion_anual&alt="legend" width="100" height="90%">'
             }]
         }],
         collapseSimple: true,
