@@ -36,7 +36,7 @@
 	cursor: pointer;
 }
 .leaflet-panel-layers-title .leaflet-panel-layers-selector {
-	float: left;
+	float: right;
 }
 
 .leaflet-panel-layers-group {

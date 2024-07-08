@@ -12,9 +12,8 @@
 <head>
 	<title>V FAO </title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
-	<link rel="stylesheet" href="https://unpkg.com/ion-rangeslider@2.2.0/css/ion.rangeSlider.skinNice.css" />
+
+	<!-- <link rel="stylesheet" href="https://unpkg.com/ion-rangeslider@2.2.0/css/ion.rangeSlider.skinNice.css" /> -->
 	<link rel="stylesheet" href="css/leaflet.css" />
 	<link rel="stylesheet" href="css/leaflet-panel-layers.css" />
 	<link rel="stylesheet" href="css/leaflet-panel-layers.min.css" />
@@ -24,36 +23,33 @@
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
 	<!-- <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" /> -->
 	<link rel="stylesheet" href="css/leaflet.awesome-markers.css" />
+	<!-- leyenda transparent -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 
-	<!-- rangeSlider - stefano cudinii -->
-
-
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-		crossorigin=""></script>
-
-	<!--jQuery-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	<!--Plugin JavaScript file-->
+	
+	<!-- rangeSlider - stefano cudinii y open -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" crossorigin=""></script>
+	<script src="https://unpkg.com/leaflet-panel-layers" crossorigin=""></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-
+	<script src="https://unpkg.com/leaflet-panel-layers"></script>
+	<script src="https://unpkg.com/leaflet.wms/dist/leaflet.wms.js"></script>
 
 
 	<!-- complemento awesomeMarker-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-
-
-	<!-- <script src="https://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script> -->
 	<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 
+
 	<script src="js/leaflet-panel-layers.src.js"></script>
+	<script src="js/leaflet-panel-layers.min.js"></script>
 	<script src="js/leaflet-panel-layers.js"></script>
 	<script src="js/L.Control.Appearance.js"></script>
 	<script src="js/jquery-3.5.1.js"></script>
@@ -66,16 +62,10 @@
 	<!-- plugin wms-->
 	<script src="js/leaflet.wms.js"></script>
 
-
 	<!-- en la Carpeta DATA estan los js como capas-->
-
 	<script type="text/javascript" src="data/provincia.js"></script>
-
-
-
 	<script type="text/javascript" src="data/geologico.js"></script>
 	<script type="text/javascript" src="data/subcuencas.js"></script>
-
 	<script type="text/javascript" src="data/rios.js"></script>
 	<script type="text/javascript" src="data/fao/dptos2010.js"></script>
 	<script type="text/javascript" src="data/fao/proviciasFAO.js"></script>
@@ -89,24 +79,36 @@
 	<script type="text/javascript" src="data/fao/parajesign.js"></script>
 	<script type="text/javascript" src="data/fao/dptoArsenico2006.js"></script>
 
-	<script type="text/javascript" src="js/wmsconae.js"></script>
 
+	<script type="text/javascript" src="js/ppmtemp.js"></script>
 	<script type="text/javascript" src="js/mapa.js"></script>
 	<script type="text/javascript" src="js/panelLayers.js"></script>
+	<!-- <script type="text/javascript" src="js/wmsconae.js"></script> -->
 	<style>
 		#map {
 			width: 100%;
 			height: 600px;
 			box-shadow: 5px 5px 5px #888;
 		}
+		.legend {
+			padding: 15px 9px;
+			font: 12px/14px Arial;
+			background: rgba(255, 255, 255, 0.918);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			border-radius: 1px;
+			width:'20vw';
+			height: 'auto';
+		}
 
 		.info {
 			padding: 6px 8px;
-			font: 14px/16px Arial, Helvetica, sans-serif;
-			background: white;
-			background: rgba(255, 255, 255, 0.8);
-			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-			border-radius: 5px;
+	font: 12px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	width: 35vw;
+	height: auto;
 		}
 
 		.info h2 {
@@ -146,6 +148,25 @@
 			font-weight: bold;
 			font-size: 30px;
 		}
+
+		/*  Slider*/
+		.legend {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			background-color: white;
+			padding: 10px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+
+		.layer-slider {
+			margin-bottom: 10px;
+		}
+
+
+		.panel-layer-item {
+			margin-bottom: 10px;
+		}
 	</style>
 
 </head>
@@ -183,18 +204,20 @@
 		map.addControl(panelLayers);
 		map.addControl(panelLayers1);
 		map.addControl(panelLayers2);
-		map.addControl(panelLayers3);
+		// map.addControl(panelLayers3);
 		map.addControl(panelLayers4);
+		// map.addControl(panelLayers7);
+		map.addControl(panelLayersClimatico);
 
-		map.addControl(panelLayers7);
-		map.addControl(panelLayers5);
+		map.addControl(htmlLegend1and6);
+
 		// Llamada a la función para crear la leyenda
 
 		createLegendGeologia();
 		createLegendCuenca();
 		createLegendRio();
-		createLegendApiDiario();
-		createLegendApiPercentil();
+		// createLegendApiDiario();
+		// createLegendApiPercentil();
 		createLegendRegiones();
 		createLegendNAF();
 		createLegendProyectos();
@@ -203,12 +226,18 @@
 		createLegendTEM();
 		createLegendDptoArsenico();
 
+
+
+
+
 		//se le agregan los controles//
 		L.control.zoom({ position: 'topright' }).addTo(map);
 
 		map.addControl(panelLayers6);
 		L.control.scale({ position: 'bottomleft', imperial: false }).addTo(map);
 	</script>
+
+
 </body>
 
 </html>

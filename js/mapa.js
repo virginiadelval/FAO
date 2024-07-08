@@ -97,7 +97,8 @@ var PROVFAO = L.geoJSON(provinciasFAO, {
 			dashArray: '0.2',
 			fillOpacity: 0.1
 		};
-	}
+	},
+	
 });
 
 var REFIONESFAO = L.geoJSON(regionesFAO, {
