@@ -1,6 +1,6 @@
 var IconLocCab = {
-    radius: 4,
-    fillColor: "#000",
+    radius: 6,
+    fillColor: "#7a0177",
     color: "#fff",
     weight: 0.5,
     opacity: 1,

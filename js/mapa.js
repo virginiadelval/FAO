@@ -49,6 +49,16 @@ var Parajes = L.geoJSON(locSec, {
 	}
 });
 
+var POBIndigena = L.geoJSON(pobInd, {
+	pointToLayer: function (feature, latlng) {
+		return L.circleMarker(latlng, IconPobInd);
+	},
+	onEachFeature: function (feature, layer) {
+		var content = popupContentPobInd(feature);
+		layer.bindPopup(content);
+	}
+});
+
 var Geologia = L.geoJSON(geologico, {
 	style: styleGeol,
 	onEachFeature: function (feature, layer) {
@@ -256,6 +266,16 @@ var NucleosAF = L.geoJSON(naf, {
 		layer.bindPopup(content);
 	}
 });
+
+//data de Nueclos de Agricultura faminial (extraido del Atlas de AF  - Horacio)
+var NBI = L.geoJSON(nbi, {
+	style: styleNBI,
+	onEachFeature: function (feature, layer) {
+		var content = popupContentNBI(feature);
+		layer.bindPopup(content);
+	}
+});
+
 
 //Datos de Localidades con Proyectos de Agua, Estandarizado y No Estandarizado - Generado a partir del Excel con todos los proyectos.
 var ProyecAgua = L.geoJSON(proyectos,

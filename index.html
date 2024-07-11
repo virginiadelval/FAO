@@ -28,7 +28,7 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 
-	
+
 	<!-- rangeSlider - stefano cudinii y open -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" crossorigin=""></script>
 	<script src="https://unpkg.com/leaflet-panel-layers" crossorigin=""></script>
@@ -78,7 +78,8 @@
 	<script type="text/javascript" src="data/fao/loccensal22.js"></script>
 	<script type="text/javascript" src="data/fao/parajesign.js"></script>
 	<script type="text/javascript" src="data/fao/dptoArsenico2006.js"></script>
-
+	<script type="text/javascript" src="data/fao/nbi_dpto.js"></script>
+	<script type="text/javascript" src="data/fao/pobindigena2021.js"></script>
 
 	<script type="text/javascript" src="js/ppmtemp.js"></script>
 	<script type="text/javascript" src="js/mapa.js"></script>
@@ -90,25 +91,26 @@
 			height: 600px;
 			box-shadow: 5px 5px 5px #888;
 		}
+
 		.legend {
 			padding: 15px 9px;
 			font: 12px/14px Arial;
 			background: rgba(255, 255, 255, 0.918);
 			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 			border-radius: 1px;
-			width:'20vw';
+			width: '20vw';
 			height: 'auto';
 		}
 
 		.info {
 			padding: 6px 8px;
-	font: 12px Arial, Helvetica, sans-serif;
-	background: white;
-	background: rgba(255,255,255,0.8);
-	box-shadow: 0 0 5px rgba(0,0,0,0.2);
-	border-radius: 3px;
-	width: 35vw;
-	height: auto;
+			font: 12px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			border-radius: 3px;
+			width: 35vw;
+			height: auto;
 		}
 
 		.info h2 {
@@ -209,7 +211,7 @@
 		// map.addControl(panelLayers7);
 		map.addControl(panelLayersClimatico);
 
-		map.addControl(htmlLegend1and6);
+
 
 		// Llamada a la función para crear la leyenda
 
@@ -225,8 +227,9 @@
 		createLegendPPM();
 		createLegendTEM();
 		createLegendDptoArsenico();
+		createLegendNBI();
 
-
+		// map.addControl(htmlLegend1and6);
 
 
 

@@ -1,5 +1,4 @@
-  
-    // conexion a wms a IDESA
+     // conexion a wms a IDESA
     var options2 = {
         format: 'image/png',
         uppercase: true,
@@ -13,18 +12,18 @@
     };
     var source2 = L.WMS.source("https://geo-backend.inta.gob.ar/geoserver/wms", options2);
     var layer1 = source2.getLayer('geonode:precipitacion_anual');
-    var layer2 = source2.getLayer('geonode:a__01_pp');
-    var layer3 = source2.getLayer('geonode:a__02_pp');
-    var layer4 = source2.getLayer('geonode:a__03_pp');
-    var layer5 = source2.getLayer('geonode:geonode__04pp');
-    var layer6 = source2.getLayer('geonode:geonode__05_pp_clip');
-    var layer7 = source2.getLayer('geonode:geonode__06_pp');
-    var layer8 = source2.getLayer('geonode:geonode__07_pp');
-    var layer9 = source2.getLayer('geonode:geonode__08_pp');
-    var layer10 = source2.getLayer('geonode:geonode__09_pp');
-    var layer11 = source2.getLayer('geonode:geonode__10_pp');
-    var layer12 = source2.getLayer('geonode:geonode__11_pp');
-    var layer13 = source2.getLayer('geonode:geonode__12_pp');
+    // var layer2 = source2.getLayer('geonode:a__01_pp');
+    // var layer3 = source2.getLayer('geonode:a__02_pp');
+    // var layer4 = source2.getLayer('geonode:a__03_pp');
+    // var layer5 = source2.getLayer('geonode:geonode__04pp');
+    // var layer6 = source2.getLayer('geonode:geonode__05_pp_clip');
+    // var layer7 = source2.getLayer('geonode:geonode__06_pp');
+    // var layer8 = source2.getLayer('geonode:geonode__07_pp');
+    // var layer9 = source2.getLayer('geonode:geonode__08_pp');
+    // var layer10 = source2.getLayer('geonode:geonode__09_pp');
+    // var layer11 = source2.getLayer('geonode:geonode__10_pp');
+    // var layer12 = source2.getLayer('geonode:geonode__11_pp');
+    // var layer13 = source2.getLayer('geonode:geonode__12_pp');
 
 
     var panelClima = [
@@ -37,66 +36,66 @@
                     name: "Media Anual",
                     layer: layer1,
                 },
-                {
+                // {
 
-                    name: "Enero",
-                    layer: layer2,
-                },
-                {
-                    name: "Febrero",
-                    layer: layer3,
+                //     name: "Enero",
+                //     layer: layer2,
+                // },
+                // {
+                //     name: "Febrero",
+                //     layer: layer3,
 
-                },
-                {
-                    name: "Marzo",
-                    layer: layer4,
+                // },
+                // {
+                //     name: "Marzo",
+                //     layer: layer4,
 
-                },
-                {
-                    name: "Abril",
-                    layer: layer5,
+                // },
+                // {
+                //     name: "Abril",
+                //     layer: layer5,
 
-                },
-                {
-                    name: "Mayo",
-                    layer: layer6,
+                // },
+                // {
+                //     name: "Mayo",
+                //     layer: layer6,
 
-                },
-                {
-                    name: "Junio",
-                    layer: layer7,
+                // },
+                // {
+                //     name: "Junio",
+                //     layer: layer7,
 
-                },
-                {
-                    name: "Julio",
-                    layer: layer8,
+                // },
+                // {
+                //     name: "Julio",
+                //     layer: layer8,
 
-                },
-                {
-                    name: "Agosto",
-                    layer: layer9,
+                // },
+                // {
+                //     name: "Agosto",
+                //     layer: layer9,
 
-                },
-                {
-                    name: "Septiembre",
-                    layer: layer10,
+                // },
+                // {
+                //     name: "Septiembre",
+                //     layer: layer10,
 
-                },
-                {
-                    name: "Octubre",
-                    layer: layer11,
+                // },
+                // {
+                //     name: "Octubre",
+                //     layer: layer11,
 
-                },
-                {
-                    name: "Noviembre",
-                    layer: layer12,
+                // },
+                // {
+                //     name: "Noviembre",
+                //     layer: layer12,
 
-                },
-                {
-                    name: "Diciembre",
-                    layer: layer13,
+                // },
+                // {
+                //     name: "Diciembre",
+                //     layer: layer13,
 
-                },
+                // },
             ]
         },
         // {
@@ -186,23 +185,23 @@
     //     hiddenIcon: 'icon icon-eye-slash'
     // });
 
-    var htmlLegend1and6 = L.control.htmllegend({
-        position: 'bottomright',
-        legends: [{
-            name: 'Precipitación Anual',
+    // var htmlLegend1and6 = L.control.htmllegend({
+    //     position: 'bottomright',
+    //     legends: [{
+    //         name: 'Precipitación Anual',
             
-            elements: [{
-            label: ' ',
-                html: '<img src= https://geo-backend.inta.gob.ar/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&width=20&height=20&layer=geonode:precipitacion_anual&alt="legend" width="100" height="90%">'
-            }]
-        }],
-        collapseSimple: true,
-        detectStretched: false,
-        collapsedOnInit: true,
-        defaultOpacity: 0.9,
-        visibleIcon: 'icon icon-eye',
-        hiddenIcon: 'icon icon-eye-slash'
-    });
+    //         elements: [{
+    //         label: ' ',
+    //             html: '<img src= https://geo-backend.inta.gob.ar/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&width=20&height=20&layer=geonode:precipitacion_anual&alt="legend" width="100" height="90%">'
+    //         }]
+    //     }],
+    //     collapseSimple: true,
+    //     detectStretched: false,
+    //     collapsedOnInit: true,
+    //     defaultOpacity: 0.9,
+    //     visibleIcon: 'icon icon-eye',
+    //     hiddenIcon: 'icon icon-eye-slash'
+    // });
 
 
   
@@ -221,3 +220,33 @@
     //     return div;
     // };
     // legend.addTo(map);
+
+    
+// Función para generar la leyenda
+function createLegendPPM() {
+    var legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML += '<img src= https://geo-backend.inta.gob.ar/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&width=20&height=20&layer=geonode:precipitacion_anual&alt="legend" width="100" height="90%">';
+         div.style.width = '30vw';
+         div.style.height = 'auto';
+         collapsibleGroups = true
+         return div;
+
+       
+    };
+
+    // Función para mostrar/ocultar la leyenda
+    function toggleLegend() {
+        if (map.hasLayer(layer1)) {
+            legend.addTo(map);
+        } else {
+            legend.remove();
+        }
+    }
+// Eliminar la leyenda al inicio
+legend.remove();
+    // Escucha el cambio de estado de la capa
+    map.on('overlayadd overlayremove', toggleLegend);
+}

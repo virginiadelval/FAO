@@ -67,6 +67,20 @@ var overlayMaps = [
 				transparent: true,
 				opacity: 0.5,
 			},
+			{
+				active: false,
+				name: "Pobl. con NBI (2010)",
+				layer: NBI,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Pobl. Originaria (2010)",
+				layer: POBIndigena,
+				transparent: true,
+				opacity: 0.5,
+			},
 
 		]
 	}
@@ -361,14 +375,14 @@ var panelLayers = new L.Control.PanelLayers(baseLayers, null,
 var panelLayers1 = new L.Control.PanelLayers(null, overlayMaps,
 	{
 		compact: true,
-		collapsed: true,
+		collapsed: false,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
 var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
 	{
 		compact: true,
-		collapsed: true,
+		collapsed: false,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
@@ -382,7 +396,7 @@ var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
 var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
 	{
 		compact: true,
-		collapsed: true,
+		collapsed: false,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
@@ -391,7 +405,7 @@ var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
 var panelLayers6 = new L.Control.PanelLayers(null, panelCC,
 	{
 		compact: true,
-		collapsed: true,
+		collapsed: false,
 		collapsibleGroups: true,
 		position: 'topleft',
 
@@ -400,7 +414,7 @@ var panelLayers6 = new L.Control.PanelLayers(null, panelCC,
 //panel de control agregado//
 var panelLayersClimatico = new L.Control.PanelLayers(null, panelClima,
 	{compact: true,
-		collapsed: true,
+		collapsed: false,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
