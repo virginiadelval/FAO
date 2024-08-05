@@ -16,6 +16,8 @@ var argenmap = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0
 });
 
 
+
+
 // Crear una capa GeoJSON y añadir al mapa
 var Prov = L.geoJSON(provincia, {
 	style: function (feature) {
@@ -59,30 +61,31 @@ var POBIndigena = L.geoJSON(pobInd, {
 	}
 });
 
-var Geologia = L.geoJSON(geologico, {
-	style: styleGeol,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentGeol(feature);
-		layer.bindPopup(content);
-	}
-});
+//var Geologia = L.geoJSON(GeologicoIGN 
+	// {
+	// style: styleGeol,
+	// onEachFeature: function (feature, layer) {
+	// 	var content = popupContentGeol(feature);
+	// 	layer.bindPopup(content);
+	// }}
+	//);
 
-var SubCuencas = L.geoJSON(subcuencas, {
+// var SubCuencas = L.geoJSON(subcuencas, {
 
-	style: styleCuenca,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentCuenca(feature);
-		layer.bindPopup(content);
-	}
-});
+// 	style: styleCuenca,
+// 	onEachFeature: function (feature, layer) {
+// 		var content = popupContentCuenca(feature);
+// 		layer.bindPopup(content);
+// 	}
+// });
 
-var Rios = L.geoJSON(rios, {
-	style: styleRios,
-	onEachFeature: function (feature, layer) {
-		var content = popupContentRios(feature);
-		layer.bindPopup(content);
-	}
-});
+// var Rios = L.geoJSON(rios, {
+// 	style: styleRios,
+// 	onEachFeature: function (feature, layer) {
+// 		var content = popupContentRios(feature);
+// 		layer.bindPopup(content);
+// 	}
+// });
 /// INFO DE TIPO JURISDICCIONAL
 var DEPTOFAO = L.geoJSON(dptoFAO, {
 	style: function (feature) {
@@ -310,3 +313,19 @@ var DeptoArsenico = L.geoJSON(dptoArsenico,
 			layer.bindPopup(content);
 		}
 	});
+
+///Dapto con Arsenicos segun el Ministerio de Salud en 2006 https://www.argentina.gob.ar/sites/default/files/2006_epidemiologia_del_hacre_en_argentina.pdf
+var RegionesHirdo = L.geoJSON(RegionHidrogeografica,
+	{
+		 style: styleRegionHidro,
+		
+	}
+);
+
+///Dapto con Arsenicos segun el Ministerio de Salud en 2006 https://www.argentina.gob.ar/sites/default/files/2006_epidemiologia_del_hacre_en_argentina.pdf
+var CuencasHidro = L.geoJSON(cuencasSist,
+	// {
+	// 	 style: styleRegionHidro,
+		
+	// }
+);

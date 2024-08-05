@@ -93,17 +93,24 @@ var infoAmb = [
 		group: "Información Base",
 		collapsed: true,
 		layers: [
+			// {
+			// 	active: false,
+			// 	name: "Rios",
+			// 	layer: Rios,
+			// 	transparent: true,
+			// 	opacity: 0.5,
+			// },
 			{
 				active: false,
-				name: "Rios",
-				layer: Rios,
+				name: "Cuencas Hídricas",
+				layer: CuencasHidro,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Cuencas Hídricas",
-				layer: SubCuencas,
+				name: "Regiones Hidrogeográficas",
+				layer: RegionesHirdo,
 				transparent: true,
 				opacity: 0.5,
 			},
@@ -111,7 +118,7 @@ var infoAmb = [
 			{
 				active: false,
 				name: "Unidades Geológicas (2.5M)",
-				layer: Geologia,
+				layer: GeologicoIGN,
 				transparent: true,
 				opacity: 0.5,
 			},
@@ -142,41 +149,42 @@ var infoAmb = [
 
 ];
 //panel Poblaciones
-// var panelPob = [
-// 	{
-// 		group: "Info Censal - INDEC",
-// 		collapsed: true,
-// 		layers: [
+var panelPob = [
+	{
+		group: "Info Censal - INDEC",
+		collapsed: true,
+		layers: [
 
-// 			, {
-// 				active: false,
-// 				name: "Localidades Censales",
-// 				layer: Localidad,
-// 				transparent: true,
-// 				opacity: 0.5,
-// 			},
-// 			{
-// 				active: false,
-// 				name: "Parajes",
-// 				layer: Parajes,
-// 				transparent: true,
-// 				opacity: 0.5,
-// 			},
-// 			{
-// 				active: false,
-// 				name: "Datos Censales (2022)",
-// 				layer: DataCenso,
-// 				transparent: true,
-// 				opacity: 0.5,
-// 			},
-// 			{
-// 				active: false,
-// 				name: "Nucleos de Agricultura Familiar",
-// 				layer: NucleosAF,
-// 				transparent: true,
-// 				opacity: 0.5,
-// 			}]
-// 	}];
+{
+				active: false,
+				name: "Localidades Censales",
+				layer: Localidad,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Parajes",
+				layer: Parajes,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Datos Censales (2022)",
+				layer: DataCenso,
+				transparent: true,
+				opacity: 0.5,
+			},
+			// {
+			// 	active: false,
+			// 	name: "Nucleos de Agricultura Familiar",
+			// 	layer: NucleosAF,
+			// 	transparent: true,
+			// 	opacity: 0.5,
+			// }
+		]
+	}];
 
 // panel Acceso al Agua
 var panelAgua = [
