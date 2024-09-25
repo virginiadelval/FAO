@@ -15,29 +15,11 @@ var baseLayers = [
 // Grupos de capas interactivas
 var overlayMaps = [
 	{
-		group: "Jurisdicciones",
+		group: "Datos para priorización",
 		collapsed: true,
 		layers: [
-			{
-				active: false,
-				name: "Regiones",
-				layer: REFIONESFAO,
-				transparent: true,
-				opacity: 0.5,
-			}, {
-				active: false,
-				name: "Provincias",
-				layer: PROVFAO,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Departamentos",
-				layer: DEPTOFAO,
-				transparent: true,
-				opacity: 0.5,
-			}, {
+			// 
+			 {
 				active: false,
 				name: "Localidades Censales",
 				layer: Localidad,
@@ -53,17 +35,17 @@ var overlayMaps = [
 			},
 
 
-		]
-	},
-	{
-		group: "Info Censal - INDEC",
-		collapsed: true,
-		layers: [
-
-			{
+		{
 				active: false,
 				name: "Datos Censales (2022)",
 				layer: DataCenso,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Pobl. Originaria (2010)",
+				layer: POBIndigena,
 				transparent: true,
 				opacity: 0.5,
 			},
@@ -76,14 +58,65 @@ var overlayMaps = [
 			},
 			{
 				active: false,
-				name: "Pobl. Originaria (2010)",
-				layer: POBIndigena,
+				name: "Pobl. con Agua de RED (2010)",
+				layer: AguaRED,
 				transparent: true,
 				opacity: 0.5,
 			},
+			{
+				active: false,
+				name: "Dptos con Niveles de Arsenico",
+				layer: DeptoArsenico,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Nucleos de Agricultura Familiar",
+				layer: NucleosAF,
+				transparent: true,
+				opacity: 0.5,
+			}
+			
 
 		]
-	}
+	},
+	{
+		group: "Proyectos de Agua",
+		collapsed: true,
+		layers: [
+			{
+				active: false,
+				name: "Proyectos Estandarizados <br> y No Estandarizados",
+				layer: ProyecAgua,
+				transparent: true,
+				opacity: 0.5,
+			},
+			
+
+
+		]
+	},
+	{
+		group: "Sitios Priorizados",
+		collapsed: true,
+		layers: [
+			{
+				active: false,
+				name: "Sitios",
+				layer: SitiosSeleccionados,
+				transparent: true,
+				opacity: 0.5,
+			},
+			
+
+
+		]
+	},
+	
+	
+	
+	
 
 
 ];
@@ -122,13 +155,7 @@ var infoAmb = [
 				transparent: true,
 				opacity: 0.5,
 			},
-			{
-				active: false,
-				name: "Dptos con Niveles de Arsenico",
-				layer: DeptoArsenico,
-				transparent: true,
-				opacity: 0.5,
-			},
+			
 		]
 	},
 	// {
@@ -187,174 +214,153 @@ var panelPob = [
 	}];
 
 // panel Acceso al Agua
-var panelAgua = [
-	{
-		group: "Proyectos de Agua",
-		collapsed: true,
-		layers: [
-			{
-				active: false,
-				name: "Proyectos Estandarizados <br> y No Estandarizados",
-				layer: ProyecAgua,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Nucleos de Agricultura Familiar",
-				layer: NucleosAF,
-				transparent: true,
-				opacity: 0.5,
-			}
-
-
-		]
-	}];
+// var panelAgua = [
+// 	];
 
 // panel de CC
-var panelCC = [
-	{
-		title: "Escenarios de CC",
-		group: "Escenarios de CC",
-		collapsed: true,
-		layers: [
-			{
-				active: false,
-				name: " PPM 4.5 Actual",
-				layer: Ppm45Actual,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "PPM 4.5 Futuro Cercano (2050)",
-				layer: Ppm45FC,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "PPM 4.5 Futuro Lejano (2100)",
-				layer: Ppm45FL,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "PPM 8.5 Actual",
-				layer: Ppm85Actual,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "PPM 8.5 Futuro Cercano (2050)",
-				layer: Ppm85FC,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "PPM 8.5 Futuro Lejano (2100)",
-				layer: Ppm85FL,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: " Temp Media 4.5 Actual",
-				layer: temMedia45Actual,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Temp Media 4.5 Futuro Cercano (2050)",
-				layer: temMedia45FC,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Temp Media 4.5 Futuro Lejano (2100)",
-				layer: temMedia45FL,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Temp Media 8.5 Actual",
-				layer: temMedia85Actual,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Temp Media 8.5 Futuro Cercano (2050)",
-				layer: temMedia85FC,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Temp Media 8.5 Futuro Lejano (2100)",
-				layer: temMedia85FL,
-				transparent: true,
-				opacity: 0.5,
-			},
-		]
-	},
-	// {
-	// 	group: "Temperatura Media",
-	// 	collapsed: true,
-	// 	layers: [
-	// 		{
-	// 			active: false,
-	// 			name: " Temp Media 4.5 Actual",
-	// 			layer: temMedia45Actual,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 		{
-	// 			active: false,
-	// 			name: "Temp Media 4.5 Futuro Cercano (2050)",
-	// 			layer: temMedia45FC,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 		{
-	// 			active: false,
-	// 			name: "Temp Media 4.5 Futuro Lejano (2100)",
-	// 			layer: temMedia45FL,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 		{
-	// 			active: false,
-	// 			name: "Temp Media 8.5 Actual",
-	// 			layer: temMedia85Actual,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 		{
-	// 			active: false,
-	// 			name: "Temp Media 8.5 Futuro Cercano (2050)",
-	// 			layer: temMedia85FC,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 		{
-	// 			active: false,
-	// 			name: "Temp Media 8.5 Futuro Lejano (2100)",
-	// 			layer: temMedia85FL,
-	// 			transparent: true,
-	// 			opacity: 0.5,
-	// 		},
-	// 	]
-	// }
-];
+// var panelCC = [
+// 	{
+// 		title: "Escenarios de CC",
+// 		group: "Escenarios de CC",
+// 		collapsed: true,
+// 		layers: [
+// 			{
+// 				active: false,
+// 				name: " PPM 4.5 Actual",
+// 				layer: Ppm45Actual,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "PPM 4.5 Futuro Cercano (2050)",
+// 				layer: Ppm45FC,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "PPM 4.5 Futuro Lejano (2100)",
+// 				layer: Ppm45FL,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "PPM 8.5 Actual",
+// 				layer: Ppm85Actual,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "PPM 8.5 Futuro Cercano (2050)",
+// 				layer: Ppm85FC,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "PPM 8.5 Futuro Lejano (2100)",
+// 				layer: Ppm85FL,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: " Temp Media 4.5 Actual",
+// 				layer: temMedia45Actual,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "Temp Media 4.5 Futuro Cercano (2050)",
+// 				layer: temMedia45FC,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "Temp Media 4.5 Futuro Lejano (2100)",
+// 				layer: temMedia45FL,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "Temp Media 8.5 Actual",
+// 				layer: temMedia85Actual,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "Temp Media 8.5 Futuro Cercano (2050)",
+// 				layer: temMedia85FC,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 			{
+// 				active: false,
+// 				name: "Temp Media 8.5 Futuro Lejano (2100)",
+// 				layer: temMedia85FL,
+// 				transparent: true,
+// 				opacity: 0.5,
+// 			},
+// 		]
+// 	},
+// 	// {
+// 	// 	group: "Temperatura Media",
+// 	// 	collapsed: true,
+// 	// 	layers: [
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: " Temp Media 4.5 Actual",
+// 	// 			layer: temMedia45Actual,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: "Temp Media 4.5 Futuro Cercano (2050)",
+// 	// 			layer: temMedia45FC,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: "Temp Media 4.5 Futuro Lejano (2100)",
+// 	// 			layer: temMedia45FL,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: "Temp Media 8.5 Actual",
+// 	// 			layer: temMedia85Actual,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: "Temp Media 8.5 Futuro Cercano (2050)",
+// 	// 			layer: temMedia85FC,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 		{
+// 	// 			active: false,
+// 	// 			name: "Temp Media 8.5 Futuro Lejano (2100)",
+// 	// 			layer: temMedia85FL,
+// 	// 			transparent: true,
+// 	// 			opacity: 0.5,
+// 	// 		},
+// 	// 	]
+// 	// }
+// ];
 
-// panel Acceso al Agua
+//panel Acceso al Agua
 // var panelArsenico = [
 // 	{
 // 		group: "Arsénico",
@@ -387,13 +393,7 @@ var panelLayers1 = new L.Control.PanelLayers(null, overlayMaps,
 		collapsibleGroups: true,
 		position: 'topleft',
 	});
-var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
-	{
-		compact: true,
-		collapsed: false,
-		collapsibleGroups: true,
-		position: 'topleft',
-	});
+
 // var panelLayers3 = new L.Control.PanelLayers(null, panelPob,
 // 	{
 // 		compact: true,
@@ -401,30 +401,19 @@ var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
 // 		collapsibleGroups: true,
 // 		position: 'topleft',
 // 	});
-var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
-	{
-		compact: true,
-		collapsed: false,
-		collapsibleGroups: true,
-		position: 'topleft',
-	});
-
-
-var panelLayers6 = new L.Control.PanelLayers(null, panelCC,
-	{
-		compact: true,
-		collapsed: false,
-		collapsibleGroups: true,
-		position: 'topleft',
-
-	});
-
-//panel de control agregado//
-var panelLayersClimatico = new L.Control.PanelLayers(null, panelClima,
-	{compact: true,
-		collapsed: false,
-		collapsibleGroups: true,
-		position: 'topleft',
-	});
+// var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
+// 	{
+// 		compact: true,
+// 		collapsed: false,
+// 		collapsibleGroups: true,
+// 		position: 'topleft',
+// 	});
+var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
+		{
+			compact: true,
+			collapsed: false,
+			collapsibleGroups: true,
+			position: 'topleft',
+		});
 
 
