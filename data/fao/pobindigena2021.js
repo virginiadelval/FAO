@@ -296,7 +296,7 @@ var pobInd = {
 
 var IconPobInd = {
     radius: 6,
-    fillColor: "#fff",
+    fillColor: "#807dba",
     color: "#fff",
     weight: 0.5,
     opacity: 1,
