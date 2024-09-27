@@ -15,7 +15,7 @@ var baseLayers = [
 // Grupos de capas interactivas
 var overlayMaps = [
 	{
-		group: "Datos para priorización",
+		group: "Información de base",
 		collapsed: true,
 		layers: [
 			// 
@@ -37,46 +37,46 @@ var overlayMaps = [
 
 		{
 				active: false,
-				name: "Datos Censales (2022)",
+				name: "Pob. Total (2022)",
 				layer: DataCenso,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Pobl. Originaria (2010)",
+				name: "Pobl. Originaria (2022)",
 				layer: POBIndigena,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Pobl. con NBI (2010)",
+				name: "% de Hogares con NBI (2010)",
 				layer: NBI,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Pobl. con Agua de RED (2010)",
+				name: "% de Hogares con Agua de Red (2022)",
 				layer: AguaRED,
+				transparent: true,
+				opacity: 0.5,
+			},{
+				active: false,
+				name: "Pob. con Nucleos de Agricultura Familiar",
+				layer: NucleosAF,
 				transparent: true,
 				opacity: 0.5,
 			},
 			{
 				active: false,
-				name: "Dptos con Niveles de Arsenico",
+				name: "Niveles de Arsenico (ppb)",
 				layer: DeptoArsenico,
 				transparent: true,
 				opacity: 0.5,
 			},
-			{
-				active: false,
-				name: "Nucleos de Agricultura Familiar",
-				layer: NucleosAF,
-				transparent: true,
-				opacity: 0.5,
-			}
+			
 			
 
 		]

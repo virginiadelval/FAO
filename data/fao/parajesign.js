@@ -10,20 +10,20 @@ var IconLocSec = {
 // Contenido del popup para cada feature
 function popupContentLocSec(feature) {
     return (
-        
+        "<div id='Estilo1'><h3>Descripción</h3></div>" +
+        "<hr class='hrx' style='color: #ef7d26;' align='left' noshade='noshade' size='1' width='100%' />" +
         "<div id='Estilo3a'>" +
         "<b> Nombre : </b>" + feature.properties.fna + "<br>" +
         "<b> Habitantes (Censo 2010): </b>" + feature.properties.HABITANTES + "<br>" +
         "<b> Tipo de asentamiento: </b>" + feature.properties.tipo_asent + "<br>" +
         "<br>" +
         "<b> <i>Fuente de Información:  </b>  INDEC - Censo 2010<br>" +
-        "<b> Fecha de actualización:  </b> - </i>" +
+        //"<b> Fecha de actualización:  </b> - </i>" +
         "</div>"
     )
 };
 
 var locSec = 
-
 {
 "type": "FeatureCollection",
 "name": "parajesign",

@@ -10,17 +10,61 @@ var IconLocCab = {
 // Contenido del popup para cada feature
 function popupContentLocCab(feature) {
     return (
-        
+        "<div id='Estilo1'><h3>Descripción</h3></div>" +
+        "<hr class='hrx' style='color: #ef7d26;' align='left' noshade='noshade' size='1' width='100%' />" +
         "<div id='Estilo3a'>" +
         "<b> Nombre : </b>" + feature.properties.fna + "<br>" +
         "<b> Tipo de asentamiento: </b>" + feature.properties.tipo_asent + "<br>" +
         
         "<br>" +
         "<b><i> Fuente de Información:  </b>  INDEC - Censo 2022<br>" +
-        "<b> Fecha de actualización:  </b> - </i>  "  +
+     //   "<b> Fecha de actualización:  </b> - </i>  "  +
         "</div>"
     )
 };
+
+
+// Función para generar la leyenda
+function createLegendLocCab() {
+    var legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'info legend');
+        var labels = [];
+
+        // Array con los estilos y sus etiquetas correspondientes
+        var styles = [
+            { label: 'Localidades', color: '#7a0177' },
+            { label: 'Parajes', color: '#807dba' },
+            
+            // Agrega aquí el resto de estilos con su respectiva etiqueta y color
+        ];
+
+        // Genera el contenido HTML de la leyenda
+        styles.forEach(function (style) {
+            labels.push(
+                '<i style="background:' + style.color + '"></i> ' + style.label
+            );
+        });
+
+        div.innerHTML = labels.join('<br>');
+        return div;
+    };
+// Función para mostrar/ocultar la leyenda
+function toggleLegend() {
+    if (map.hasLayer(Parajes)) {
+        legend.addTo(map);
+    } else {
+        legend.remove();
+    }
+}
+// Eliminar la leyenda al inicio
+legend.remove();
+// Escucha el cambio de estado de la capa
+map.on('overlayadd overlayremove', toggleLegend);
+}
+
+
 
 var locCabecera =
 {

@@ -56,9 +56,9 @@ function createLegendDptoArsenico() {
         // Array con los estilos y sus etiquetas correspondientes
         var styles = [
             { label: 'Niveles de Arsenico', color: '' },
-            { label: 'Alto', color: '#67000d' },
-            { label: 'Medio', color: '#ea372a' },
-            { label: 'Bajo', color: '#fca486' },
+            { label: 'Alto (> 101 ppb)', color: '#67000d' },
+            { label: 'Medio (51 a 100 ppb)', color: '#ea372a' },
+            { label: 'Bajo (< 50 ppb)', color: '#fca486' },
             { label: 'Sin dato', color: '#fff5f0' },
     
             // Agrega aquí el resto de estilos con su respectiva etiqueta y color
