@@ -17,7 +17,6 @@ var source = L.WMS.source("https://sigam.segemar.gov.ar/geoserver217/wms?", opti
 // llama cada capa del servidor//
 var GeologicoIGN = source.getLayer('sigam:e2.5M.UnidadesGeologicas');
 
-
 var Rios= source.getLayer();
 
 var SubCuencas= source.getLayer()

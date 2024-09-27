@@ -1,5 +1,4 @@
 
-
 var MarkerOptionsSitios = {
     radius: 8,
     fillColor: "#ff7f00",

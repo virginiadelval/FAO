@@ -98,12 +98,12 @@ var overlayMaps = [
 		]
 	},
 	{
-		group: "Sitios Priorizados",
+		group: "Modelos de Cosecha de Agua",
 		collapsed: true,
 		layers: [
 			{
 				active: false,
-				name: "Sitios",
+				name: "Sitios seleccionados",
 				layer: SitiosSeleccionados,
 				transparent: true,
 				opacity: 0.5,
@@ -123,7 +123,7 @@ var overlayMaps = [
 //panel ambiental
 var infoAmb = [
 	{
-		group: "Información Base",
+		group: "Información Ambiental",
 		collapsed: true,
 		layers: [
 			// {
@@ -133,6 +133,27 @@ var infoAmb = [
 			// 	transparent: true,
 			// 	opacity: 0.5,
 			// },
+			{
+				active: false,
+				name: "Estaciones Meteorologicas",
+				layer: EstacionesSMN,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Suelos",
+				layer: SuelosTipo,
+				transparent: true,
+				opacity: 0.5,
+			},
+			{
+				active: false,
+				name: "Ecoregion",
+				layer: Ecoregion,
+				transparent: true,
+				opacity: 0.5,
+			},
 			{
 				active: false,
 				name: "Cuencas Hídricas",
@@ -175,47 +196,7 @@ var infoAmb = [
 	// }
 
 ];
-//panel Poblaciones
-var panelPob = [
-	{
-		group: "Info Censal - INDEC",
-		collapsed: true,
-		layers: [
 
-{
-				active: false,
-				name: "Localidades Censales",
-				layer: Localidad,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Parajes",
-				layer: Parajes,
-				transparent: true,
-				opacity: 0.5,
-			},
-			{
-				active: false,
-				name: "Datos Censales (2022)",
-				layer: DataCenso,
-				transparent: true,
-				opacity: 0.5,
-			},
-			// {
-			// 	active: false,
-			// 	name: "Nucleos de Agricultura Familiar",
-			// 	layer: NucleosAF,
-			// 	transparent: true,
-			// 	opacity: 0.5,
-			// }
-		]
-	}];
-
-// panel Acceso al Agua
-// var panelAgua = [
-// 	];
 
 // panel de CC
 // var panelCC = [
@@ -360,23 +341,6 @@ var panelPob = [
 // 	// }
 // ];
 
-//panel Acceso al Agua
-// var panelArsenico = [
-// 	{
-// 		group: "Arsénico",
-// 		collapsed: true,
-// 		layers: [
-// 			{
-// 				active: false,
-// 				name: "Dptos con Niveles de Arsenico",
-// 				layer: DeptoArsenico,
-// 				transparent: true,
-// 				opacity: 0.5,
-// 			},
-
-
-// 		]
-// 	}];
 
 //panel de control agregado//
 var panelLayers = new L.Control.PanelLayers(baseLayers, null,
@@ -394,20 +358,6 @@ var panelLayers1 = new L.Control.PanelLayers(null, overlayMaps,
 		position: 'topleft',
 	});
 
-// var panelLayers3 = new L.Control.PanelLayers(null, panelPob,
-// 	{
-// 		compact: true,
-// 		//collapsed: true,
-// 		collapsibleGroups: true,
-// 		position: 'topleft',
-// 	});
-// var panelLayers4 = new L.Control.PanelLayers(null, panelAgua,
-// 	{
-// 		compact: true,
-// 		collapsed: false,
-// 		collapsibleGroups: true,
-// 		position: 'topleft',
-// 	});
 var panelLayers2 = new L.Control.PanelLayers(null, infoAmb,
 		{
 			compact: true,

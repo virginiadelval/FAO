@@ -21,25 +21,25 @@
 
 
 // Función para crear sliders de opacidad
-function createOpacitySlider(layer) {
-var $sliderContainer = $('<div class="layer-slider">');
-var $input = $('<input type="text" value="1" />');
-$sliderContainer.append($input);
+// function createOpacitySlider(layer) {
+// var $sliderContainer = $('<div class="layer-slider">');
+// var $input = $('<input type="text" value="1" />');
+// $sliderContainer.append($input);
 
-$input.ionRangeSlider({
-  min: 0.1,
-  max: 1,
-  step: 0.01,
-  from: 1,
-  hide_min_max: true,
-  hide_from_to: true,
-  onChange: function(o) {
-      layer.setOpacity(o.from);
-  }
-});
+// $input.ionRangeSlider({
+//   min: 0.1,
+//   max: 1,
+//   step: 0.01,
+//   from: 1,
+//   hide_min_max: true,
+//   hide_from_to: true,
+//   onChange: function(o) {
+//       layer.setOpacity(o.from);
+//   }
+// });
 
-return $sliderContainer[0];
-}
+// return $sliderContainer[0];
+// }
 
 // Panel de Estatus Hídrico
 var panelTransparecia = [{
@@ -47,16 +47,16 @@ group: "Estatus Hídrico",
 collapsed: true,
 layers: [
   {
-      active: true,
+      active: false,
       name: "Indice de Precipitación Diario (API)",
       layer: APIDiario,
-      opacityControl: createOpacitySlider(APIDiario)
+      // opacityControl: createOpacitySlider(APIDiario)
   },
   {
-      active: true,
+      active: false,
       name: "Percentil de API",
       layer: APIPercentil,
-      opacityControl: createOpacitySlider(APIPercentil)
+      // opacityControl: createOpacitySlider(APIPercentil)
   }
 ]
 }];
@@ -66,15 +66,15 @@ compact: true,
 collapsed: false,
 collapsibleGroups: true,
 position: 'bottomright',
-buildItem: function(item) {
-  var $item = $('<div class="panel-layer-item">');
-  var $label = $('<span>').text(item.name);
-  $item.append($label);
-  $item.append($(item.opacityControl));
-  return $item[0];
-}
+// buildItem: function(item) {
+//   var $item = $('<div class="panel-layer-item">');
+//   var $label = $('<span>').text(item.name);
+//   $item.append($label);
+//   $item.append($(item.opacityControl));
+//   return $item[0];
+// }
 });
-map.addControl(panelLayers5);
+
 
 
 

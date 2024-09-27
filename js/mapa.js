@@ -108,15 +108,18 @@ var DeptoArsenico = L.geoJSON(dptoArsenico,
 		}
 	});
 
-///Dapto con Arsenicos segun el Ministerio de Salud en 2006 https://www.argentina.gob.ar/sites/default/files/2006_epidemiologia_del_hacre_en_argentina.pdf
+///Daptos del IGN
 var RegionesHirdo = L.geoJSON(RegionHidrogeografica,
 	{
 		 style: styleRegionHidro,
-		
-	}
+		 onEachFeature: function (feature, layer) {
+			var content = popupContentRegionHidro(feature);
+			layer.bindPopup(content);
+		}  
+	}  
 );
 
-///Dapto con Arsenicos segun el Ministerio de Salud en 2006 https://www.argentina.gob.ar/sites/default/files/2006_epidemiologia_del_hacre_en_argentina.pdf
+///Dapto IGN
 var CuencasHidro = L.geoJSON(cuencasSist,
 	// {
 	// 	 style: styleRegionHidro,
@@ -140,4 +143,38 @@ var SitiosSeleccionados = L.geoJSON(sitios,
 	}
 );
 
+var EstacionesSMN = L.geoJSON(SMN,
+	{
+		pointToLayer: function (feature, latlng) {
+			return L.circleMarker(latlng, MarkerOptionsSMN,
+			);
 
+		},
+ 	style: MarkerOptionsSMN,
+	 onEachFeature: function (feature, layer) {
+		var content = popupContentSMN(feature);
+		layer.bindPopup(content);
+	}
+		
+	}
+);
+
+var SuelosTipo = L.geoJSON(suelos,
+	{
+		style: styleSuelos,
+		onEachFeature: function (feature, layer) {
+			var content = popupContentSuelos(feature);
+			layer.bindPopup(content);
+		}  
+	}
+);
+
+var Ecoregion = L.geoJSON(ecorregion,
+	{
+		style: styleEco,
+		onEachFeature: function (feature, layer) {
+			var content = popupContentEcoregion(feature);
+			layer.bindPopup(content);
+		}  
+	}
+);

@@ -25,8 +25,7 @@
 	<link rel="stylesheet" href="css/leaflet.awesome-markers.css" />
 	<!-- leyenda transparent -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 
 
 	<!-- rangeSlider - stefano cudinii y open -->
@@ -60,8 +59,6 @@
 <!-- full screen-->
 <script src="js/Control.FullScreen.js"></script>
 <!-- geolocalizacion-->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script> -->
 <link rel="stylesheet" href="css/L.Control.Locate.css" />
 <script src="js/L.Control.Locate.js"></script>
 <script src="js/L.Control.Locate.min.js"></script>
@@ -82,11 +79,14 @@
 	<script type="text/javascript" src="data/fao/cuencas_sistemas.js"></script>
 	<script type="text/javascript" src="data/fao/agua_red_j.js"></script>
 	<script type="text/javascript" src="data/fao/sitios_j.js"></script>
+	<script type="text/javascript" src="data/fao/esmn_j.js"></script>
+	<script type="text/javascript" src="data/fao/suelos_j.js"></script>
+	<script type="text/javascript" src="data/fao/ecoregion_j.js"></script>
 
 	<!-- <script type="text/javascript" src="js/ppmtemp.js"></script> -->
 	<script type="text/javascript" src="js/mapa.js"></script>
 	<script type="text/javascript" src="js/panelLayers.js"></script>
-	<!-- <script type="text/javascript" src="js/wmsconae.js"></script> -->
+	<script type="text/javascript" src="js/wmsconae.js"></script>
 	 
 	<style>
 		#map {
@@ -204,20 +204,6 @@
 			z-index: 99999;
 		}
 
-/* Estilos CSS para la leyenda  dividida en columnas*/
-/* .info.legend {
-    background: white;
-    padding: 10px;
-    border: 1px solid #ccc;	
-    border-radius: 5px;
-    font-size: 12px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crea 5 columnas */
- /*   grid-gap: 0px; /* Espacio entre los elementos */
-  /*  align-items: end;
-    text-align: center;
-} */
-
 
 /* Estilos para los elementos de la leyenda */
 .legend-item {
@@ -260,7 +246,6 @@
 		}
 		L.control.watermark(position = 'topleft').addTo(map);
 
-
 		// Insertando buscador
 		var title = L.control();
 		title.onAdd = function (map) {
@@ -282,30 +267,9 @@
 			collapsed: true
 		});
 		map.addControl(searchControl);
-
-		// searchControl.on('search:locationfound', function (e) {
-		// 	var tipoAbastecimiento = e.text; // Tipo de abastecimiento buscado
-
-		// 	// Restaurar el estilo de todas las capas
-		// 	PUESTOS.eachLayer(function (layer) {
-		// 		PUESTOS.resetStyle(layer);
-		// 	});
-
-		// 	// Iterar sobre todas las capas y resaltar las que coinciden con el tipo de abastecimiento buscado
-		// 	PUESTOS.eachLayer(function (layer) {
-		// 		if (layer.feature.properties.TIPO_ABAST === tipoAbastecimiento) {
-		// 			layer.setStyle({ fillColor: '#3f0', color: '#6bbdc9' });
-		// 		}
-		// 	});
-		// }).on('search:collapsed', function (e) {
-		// 	// Restaurar el estilo de todas las capas al cerrar la búsqueda
-		// 	PUESTOS.eachLayer(function (layer) {
-		// 		PUESTOS.resetStyle(layer);
-		// 	});
-		// });
+	
 		map.removeLayer(Parajes);
-
-			//geolocalizacion
+	//geolocalizacion
 			function buscarLocalizacion(e) {
 			L.marker(e.latlng).addTo(map);
 		}
@@ -355,16 +319,12 @@
 		map.addControl(panelLayers2);
 		// map.addControl(panelLayers7);
 		// map.addControl(panelLayersClimatico);
+		map.addControl(panelLayers5);
 
 
 
 		// Llamada a la función para crear la leyenda
 
-		// createLegendGeologia();
-		// createLegendCuenca();
-		// createLegendRio();
-		// createLegendApiDiario();
-		// createLegendApiPercentil();
 
 		createLegendLocCab();
 		createLegendSitios();
@@ -376,7 +336,10 @@
 		createLegendDptoArsenico();
 		createLegendNBI();
 		createLegendAguaRed();
-
+		createLegendRegionHidro();
+		createLegendSMN();
+		createLegendSuelos();
+		createLegendEcorregiones();
 		// map.addControl(htmlLegend1and6);
 
 
@@ -384,7 +347,7 @@
 		//se le agregan los controles//
 		L.control.zoom({ position: 'topright' }).addTo(map);
 
-		map.addControl(panelLayers6);
+		// map.addControl(panelLayers6);
 		L.control.scale({ position: 'bottomleft', imperial: false }).addTo(map);
 	</script>
 
